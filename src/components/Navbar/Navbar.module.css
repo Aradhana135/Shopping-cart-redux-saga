@@ -1,0 +1,66 @@
+.navbar {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  background: var(--primary-color);
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.navbar__logo {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(233, 82, 82);
+}
+
+.navbar__cart {
+  /* background: rgb(131, 189, 108); */
+  background: url("https://tse4.mm.bing.net/th?id=OIP.GGkHOaPknQlAlAup3ykoFQHaHa&pid=Api&P=0")  no-repeat fixed center;
+  width: 110px;
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.navbar__cart:hover {
+  opacity: 0.75;
+}
+.Cart_img{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 80px;
+}
+
+.cart__title {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--dark-color);
+}
+
+.cart__image {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.cart__counter {
+  height: 40px;
+  width: 80px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 50%;
+  color: var(--dark-color);
+  background: var(--light-color);
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

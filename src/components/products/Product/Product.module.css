@@ -1,0 +1,110 @@
+.product {
+    /* width: 750px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.26);
+    border:rgb(184, 236, 184);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; */
+    /* width: 470px; */
+    display: flex;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 26%);
+    border: rgb(184, 236, 184);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    margin-left: 2px;
+  }
+  .product__image_div{
+    height: 200px;
+    width: 200px;
+  }
+  .product__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-top: 10px;
+    /* border-radius: 50%; */
+    /* border: 1px solid #efefef; */
+  }
+  
+  .product__details {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .details__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--secondary-color);
+  }
+  
+  .details__desc {
+    font-size: 0.85rem;
+    font-family:serif;
+    color: var(--secondary-color);
+    height: 76px;
+    overflow: hidden;
+  }
+  
+  .details__price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+  
+  .product__buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+  
+  .buttons__btn {
+    /* width: 100px; */
+    width: 90%;
+    padding: 0.8rem;
+    box-shadow: 0 10px 20px rgba(158, 61, 61, 0.26);
+    border:rgb(125, 228, 125);
+    border-radius: 10px;
+    /* border: 5px solid var(--secondary-color);
+    border-radius: 20px; */
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: space-between;
+    margin-right: 80px;
+  }
+  
+  .buttons__btn:hover {
+    opacity: 0.7;
+  }
+  
+  .buttons__view {
+    background: var(--light-color);
+    color: var(--secondary-color);
+  }
+  
+  .buttons__add {
+    background: var(--secondary-color);
+    color: var(--light-color);
+  }
+  
+  /* Product_product__\+JBdO {
+    width: 400px;
+    display: flex;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 26%);
+    border: rgb(184, 236, 184);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+} */
