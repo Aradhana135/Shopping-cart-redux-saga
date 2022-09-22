@@ -21,7 +21,7 @@ const Products = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return currentPosts ? (
     <Container maxW="md" centerContent>
-      <Header currentPosts={currentPosts}/>
+      <Header/>
       <Grid
         className={styles.products}
         templateColumns="repeat(3, 1fr)"
