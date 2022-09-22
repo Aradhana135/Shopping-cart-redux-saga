@@ -11,7 +11,6 @@ const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
 
-  // console.log("products", product);
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -42,7 +41,7 @@ const Products = () => {
     
     </Container>
   ) : (
-    "loading"
+    "loading.."
   );
 };
 

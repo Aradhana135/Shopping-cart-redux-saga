@@ -13,6 +13,7 @@
 .navbar__logo {
   font-size: 40px;
   font-weight: bold;
+  font-size: underline;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: rgb(233, 82, 82);
 }
@@ -57,10 +58,13 @@
   width: 80px;
   border: 1px solid var(--secondary-color);
   border-radius: 50%;
-  color: var(--dark-color);
+  color: red;
   background: var(--light-color);
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: 800;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -40px;
+  margin-left: -30px;
 }

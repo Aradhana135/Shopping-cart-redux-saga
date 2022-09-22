@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <NavLink to="/">
-        <h2 className={styles.navbar__logo}> Ecart </h2>
+        <h2 className={styles.navbar__logo}><u>E-Cart</u>  </h2>
       </NavLink>
       <NavLink to="/cart">
         <div className={styles.navbar__cart}>
