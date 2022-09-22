@@ -2,3 +2,6 @@ export const ADD_TO_CART="ADD_TO_CART";
 export const REMOVE_FROM_CART="REMOVE_FROM_CART";
 export const ADJUST_QTY = "ADJUST_QTY";
 export const LOAD_CURRENT_ITEM = "LOAD_CURRENT_ITEM";
+export const SORT_POSTS_ASC = 'SORT_POSTS_ASC';
+export const SORT_POSTS_DESC = 'SORT_POSTS_DESC';
+export const SEARCH_POSTS = 'SEARCH_POSTS';

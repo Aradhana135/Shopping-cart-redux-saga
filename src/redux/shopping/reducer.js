@@ -6,9 +6,9 @@ const shopReducer = (state = INITIAL_STATE, action) => {
     case actionTypes.ADD_TO_CART:
       //check if items is in cart already
       const { id, allProducts } = action.payload;
-      const item = allProducts.find((prod) => prod.id == id);
+      const item = allProducts.find((prod) => prod.id === id);
       const isItemExist =
-        state.products.filter((prod) => prod.id == id).length > 0
+        state.products.filter((prod) => prod.id === id).length > 0
           ? true
           : false;
       return {
@@ -16,7 +16,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         currentItem: item,
         products: isItemExist
           ? state.products.map((prod) =>
-              prod.id == id ? { ...prod, qty: prod.qty + 1 } : prod
+              prod.id === id ? { ...prod, qty: prod.qty + 1 } : prod
             )
           : [...state.products, { ...item, qty: 1 }],
       };
@@ -41,6 +41,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         ...state,
         currentItem: action.payload,
       };
+  
     default:
       return state;
   }

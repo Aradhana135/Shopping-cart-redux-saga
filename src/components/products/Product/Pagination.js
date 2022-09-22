@@ -12,7 +12,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
       <div className={styles.Pagination}>
         {pageNumbers.map(number => (
         //   <li key={number} className='page-item'>
-            <button onClick={() => paginate(number)} className={`${styles.buttons__btn} ${styles.details__addBtn}`}>
+            <button onClick={() => paginate(number)} className={`${styles.buttons__btn} ${styles.details__addBtn}`} key={number}>
             {number}
             </button>
         //   </li>
