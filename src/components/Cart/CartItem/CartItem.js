@@ -9,13 +9,14 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     dispatch(removeFromCart(id));
+    console.log("id",id)
   };
   const handleQty = (e) => {
     console.log(e);
     setQtyValue(e.target.value);
     dispatch(adjustQty(item.id, e.target.value));
   };
-  
+
 
   return (
     <div className={styles.cartItem}>
@@ -27,7 +28,7 @@ const CartItem = ({ item }) => {
       <div className={styles.cartItem__details}>
         <p className={styles.details__title}>{item.title}</p>
         <p className={styles.details__desc}>{item.description}</p>
-        <p className={styles.details__price}>$ {item.price}</p>
+        <p className={styles.details__price}> ₹ {item.price}</p>
       </div>
       <div className={styles.cartItem__actions}>
         <div className={styles.cartItem__qty}>

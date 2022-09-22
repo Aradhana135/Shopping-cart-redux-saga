@@ -11,8 +11,8 @@ export function apiReducer(state = initialState, action) {
     case actionTypeApi.API_CALL_SUCCESS:
       return { ...state, apiData: action.payload.apiData };
     case actionTypeApi.API_CALL_FAILURE:
-        return {...state,error:action.payload.error}  ;
-    default :
-    return state
+      return { ...state, error: action.payload.error };
+    default:
+      return state;
   }
 }
