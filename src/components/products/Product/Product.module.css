@@ -108,3 +108,7 @@
     flex-direction: column;
     align-items: center;
 } */
+.error__image{
+width: 400px;
+height: 400px;
+}

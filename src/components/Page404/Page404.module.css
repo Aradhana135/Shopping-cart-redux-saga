@@ -1,0 +1,67 @@
+
+  
+  .main_div{
+    width: 550px;
+    height: 600px;
+    margin-left: 550px;
+    box-shadow: 0 10px 20px rgba(158, 61, 61, 0.26);
+    /* border:rgb(125, 228, 125); */
+    border-radius: 10px;
+  }
+  .product__details {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .details__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--secondary-color);
+    margin-left: 20px;
+  }
+  
+  
+  .product__buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+  
+  .buttons__btn {
+    /* width: 100px; */
+    width: 100px;
+    margin-left: 100px;
+    padding: 0.8rem;
+    box-shadow: 0 10px 20px rgba(158, 61, 61, 0.26);
+    border:rgb(125, 228, 125);
+    border-radius: 10px;
+    /* border: 5px solid var(--secondary-color);
+    border-radius: 20px; */
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: space-between;
+    margin-left: 200px;
+  }
+  
+  .buttons__btn:hover {
+    opacity: 0.9;
+  }
+  
+  .buttons__view {
+    background: var(--light-color);
+    color: var(--secondary-color);
+  }
+  
+  .buttons__add {
+    background: var(--secondary-color);
+    color: var(--light-color);
+  }
+  
+.error__image{
+width: 400px;
+height: 400px;
+}

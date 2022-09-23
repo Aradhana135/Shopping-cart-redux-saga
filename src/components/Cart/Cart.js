@@ -8,6 +8,7 @@ const Cart = () => {
   const cartData = useSelector((state) => state.shop.products);
   const [totalQty, settotalQty] = useState(0);
   const [totalPrice, settotalPrice] = useState(0);
+  
   useEffect(() => {
     let total = 0;
     let price = 0;

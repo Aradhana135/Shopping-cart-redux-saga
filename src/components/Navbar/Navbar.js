@@ -4,12 +4,10 @@ import styles from "./Navbar.module.css";
 import { useSelector } from "react-redux";
 
 import { useState, useEffect } from "react";
-
 const Navbar = () => {
   const cartData = useSelector((state) => state.shop.products);
 
   const [counter, setCounter] = useState(0);
-
   useEffect(() => {
     let value = 0;
 
@@ -22,13 +20,15 @@ const Navbar = () => {
     setCounter(value);
   }, [cartData]);
   return (
-    <div className={styles.navbar}>
-      <NavLink to="/">
-        <h2 className={styles.navbar__logo}><u>E-Cart</u>  </h2>
-      </NavLink>
-      <NavLink to="/cart">
+    <>
+      <div className={styles.navbar}>
+        <NavLink to="/">
+          <h2 className={styles.navbar__logo}>
+            <u>E-Cart</u>{" "}
+          </h2>
+        </NavLink>
+        <NavLink to="/cart">
         <div className={styles.navbar__cart}>
-          {/* <h3 className={styles.cart__title}>Cart</h3> */}
           <img
             src="https://tse4.mm.bing.net/th?id=OIP.GGkHOaPknQlAlAup3ykoFQHaHa&pid=Api&P=0"
             className={styles.Cart_img}
@@ -37,8 +37,9 @@ const Navbar = () => {
           <i></i>
           <div className={styles.cart__counter}>{counter}</div>
         </div>
-      </NavLink>
-    </div>
+        </NavLink>
+      </div>
+    </>
   );
 };
 

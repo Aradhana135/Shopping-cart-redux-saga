@@ -27,22 +27,6 @@ export function apiReducer(state = initialState, action) {
           prod.title.toLowerCase().includes(action.payload)
         ),
       };
-    case actionTypeApi.SORT_ASC:
-      const sortAsc = action.payload.sort((a, b) =>
-        a.title < b.title ? 1 : a.title > b.title ? -1 : 0
-      );
-      return {
-        ...state,
-        apiData: sortAsc,
-      };
-    case actionTypeApi.SORT_DESC:
-      const sortDesc = action.payload.sort((a, b) =>
-        a.title < b.title ? -1 : a.title > b.title ? 1 : 0
-      );
-      return {
-        ...state,
-        apiData: sortDesc,
-      };
     default:
       return state;
   }

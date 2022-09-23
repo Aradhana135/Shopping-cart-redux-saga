@@ -10,15 +10,3 @@ export const search = (value) => {
     payload: value,
   };
 };
-export const SORT_ASC=(value)=>{
-    return{
-        type:SORT_POSTS_ASC,
-        payload:value
-    }
-}
-export const SORT_DESC=(value)=>{
-    return{
-        type:SORT_POSTS_DESC,
-        payload:value
-    }
-}
