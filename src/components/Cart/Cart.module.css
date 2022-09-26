@@ -1,6 +1,6 @@
 .cart {
   margin: 2rem auto;
-  width: 300px;
+  width: 280px;
   display: fcolumnlex;
   justify-content: space-between;
   box-shadow: 0 10px 20px rgba(158, 61, 61, 0.26);
@@ -25,8 +25,9 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
   margin-top: 18px;
-    /* margin-right: 18px; */
-    /* margin-bottom: 18px; */
+    width: 275px;
+    margin-left: 4px;
+
 
 }
 
@@ -37,7 +38,6 @@
 }
 
 .summary__price {
-  /* display: flex; */
   align-items: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Products.module.css";
 import { useSelector } from "react-redux";
 import Product from "./Product/Product";
-import { Grid, Container } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 import Pagination from "./Product/Pagination";
 import Header from "./Product/Header";
 
