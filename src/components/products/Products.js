@@ -26,7 +26,7 @@ const Products = () => {
       <Grid
         className={styles.products}
         templateColumns="repeat(3, 1fr)"
-        gap={10}
+        gap={4}
       >
         {
       

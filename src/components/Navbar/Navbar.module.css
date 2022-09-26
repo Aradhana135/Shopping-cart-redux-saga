@@ -8,14 +8,18 @@
   position: sticky;
   top: 0;
   left: 0;
+  margin-left: 15px !important;
 }
-
+.navbar__cart_btn{
+margin-right: 5px !important
+}
 .navbar__logo {
   font-size: 40px;
   font-weight: bold;
   font-size: underline;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: rgb(233, 82, 82);
+  margin-left: 15px !important
 }
 
 .navbar__cart {

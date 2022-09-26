@@ -3,14 +3,33 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./CartItem.module.css";
 import { removeFromCart, adjustQty } from "../../../redux/shopping/action";
-import { DeleteIcon } from '@chakra-ui/icons'
-import { Input } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+  Portal,
+  CloseButton,
+  Button
+} from "@chakra-ui/react";
 const CartItem = ({ item }) => {
   const [qtyvalue, setQtyValue] = useState(item.qty);
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     dispatch(removeFromCart(id));
-    console.log("id",id)
+    
+    console.log("id", id);
   };
   const handleQty = (e) => {
     console.log(e);
@@ -18,6 +37,15 @@ const CartItem = ({ item }) => {
     dispatch(adjustQty(item.id, e.target.value));
   };
 
+  const handleIncrementClick = (e) => {
+    e.preventDefault();
+    dispatch(adjustQty(item.id, item.qty + 1));
+  };
+
+  const handleDecrementClick = (e) => {
+    e.preventDefault();
+    dispatch(adjustQty(item.id, item.qty - 1));
+  };
 
   return (
     <div className={styles.cartItem}>
@@ -33,21 +61,45 @@ const CartItem = ({ item }) => {
       <div className={styles.cartItem__actions}>
         <div className={styles.cartItem__qty}>
           <label htmlFor="qty">Qty</label>
-          <Input className={styles.cartItem__qty}
-            min="1"
-            type="number"
-            id="qty"
-            name="qty"
-            value={qtyvalue}
-            onChange={handleQty}
-          />
+          <NumberInput defaultValue={item.qty}>
+            <NumberInputField
+              className={styles.cartItem__qty}
+              id="qty"
+              name="qty"
+              value={item.qty}
+              onChange={handleQty}
+            />
+            <NumberInputStepper>
+              <NumberIncrementStepper onClick={handleIncrementClick} />
+              <NumberDecrementStepper onClick={handleDecrementClick} />
+            </NumberInputStepper>
+          </NumberInput>
         </div>
-        <button
+        <Popover>
+  <PopoverTrigger>
+  <button
           className={styles.actions__deleteItemBtn}
-          onClick={() => handleDelete(item.id)}
+         
         >
-          <i class="fas fa-trash-alt fa-3x"> <DeleteIcon/> </i>
+          {/* <i class="fas fa-trash-alt fa-3x"> */}{" "}
+          <DeleteIcon className={styles.delete_btn} /> {/* </i> */}
         </button>
+  </PopoverTrigger>
+  <PopoverContent>
+          <PopoverArrow />
+          <PopoverCloseButton />
+          <PopoverHeader>Remove Item </PopoverHeader>
+          <PopoverBody>
+            Are you sure you want to remove this item from cart ?
+            <PopoverFooter className={styles.delete_popup}>
+            {/* <PopoverCloseButton > Cancel  </PopoverCloseButton > */}
+           
+            <Button  onClick={() => handleDelete(item.id)}> Remove  </Button>
+            </PopoverFooter>
+          </PopoverBody>
+        </PopoverContent>
+      </Popover>
+        
       </div>
     </div>
   );

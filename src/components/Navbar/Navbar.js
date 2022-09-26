@@ -14,12 +14,12 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 import Cart from "../Cart/Cart";
 const Navbar = () => {
   const cartData = useSelector((state) => state.shop.products);
-  const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef();
 
   const [counter, setCounter] = useState(0);
   useEffect(() => {
@@ -41,30 +41,30 @@ const Navbar = () => {
             <u>E-Cart</u>{" "}
           </h2>
         </NavLink>
-          <button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-        <div className={styles.navbar__cart}>
-          <img
-            src="https://tse4.mm.bing.net/th?id=OIP.GGkHOaPknQlAlAup3ykoFQHaHa&pid=Api&P=0"
-            className={styles.Cart_img}
-            alt="Paris"
-          ></img>
-          <i></i>
-          <div className={styles.cart__counter}>{counter}</div>
-        </div>
+        <button ref={btnRef} colorScheme="teal" onClick={onOpen} classNam={styles.navbar__cart_btn}>
+          <div className={styles.navbar__cart}>
+            <img
+              src="https://tse4.mm.bing.net/th?id=OIP.GGkHOaPknQlAlAup3ykoFQHaHa&pid=Api&P=0"
+              className={styles.Cart_img}
+              alt="Paris"
+            ></img>
+            <i></i>
+            <div className={styles.cart__counter}>{counter}</div>
+          </div>
         </button>
-        <Drawer className={styles.Drawer_main}
+        <Drawer
+          className={styles.Drawer_main}
           isOpen={isOpen}
-          placement='right'
+          placement="right"
           onClose={onClose}
           finalFocusRef={btnRef}
+          size="lg"
         >
           <DrawerOverlay />
-          <DrawerContent  overflow='scroll'>
+          <DrawerContent overflow="scroll">
             <DrawerCloseButton />
-            <Cart/>
-  
-            <DrawerFooter>
-            </DrawerFooter>
+            <Cart />
+            <DrawerFooter></DrawerFooter>
           </DrawerContent>
         </Drawer>
       </div>

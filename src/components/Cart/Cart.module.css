@@ -1,17 +1,18 @@
 .cart {
   margin: 2rem auto;
-  width: 280px;
+  width: 625px;
   display: fcolumnlex;
   justify-content: space-between;
   box-shadow: 0 10px 20px rgba(158, 61, 61, 0.26);
     border:rgb(125, 228, 125);
     border-radius: 10px;
+    display: flex;
 }
 
 .cart__items {
   flex: 0.7;
   margin-right: 1rem;
-  margin-top: 20px;
+  margin-top: 10px;
 
 }
 
@@ -25,9 +26,11 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
   margin-top: 18px;
-    width: 275px;
-    margin-left: 4px;
-
+  width: 500px !important;
+  margin-right: 10px;
+  margin-top: 10px;
+  height: 250px;
+  margin-bottom: 10px;
 
 }
 

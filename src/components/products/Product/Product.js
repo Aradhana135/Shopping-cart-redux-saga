@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Product.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useToast,ChakraProvider } from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/react";
 import { addToCart, loadCurrentItem } from "../../../redux/shopping/action";
 
 const Product = ({ productData }) => {
@@ -10,6 +10,7 @@ const Product = ({ productData }) => {
   const dispatch = useDispatch();
   const allProducts = useSelector((state) => state.api.apiData);
   const handleAddToCart = (id) => {
+
     dispatch(addToCart({ id: id, allProducts: allProducts }));
     toast({
       title: "Data added to cart",
