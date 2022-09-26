@@ -7,7 +7,7 @@ function Header() {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="templateContainer">
+      <div className={styles.Search_div}>
         <div >
           <Input className={styles.Search}
             id="SearchInput"

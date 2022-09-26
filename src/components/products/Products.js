@@ -19,8 +19,10 @@ const Products = () => {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return currentPosts ? (
-    <Container maxW="md" centerContent>
-      <Header/>
+    <div className={styles.main_div}>
+    {/* <Container > */}
+    
+      <Header className={styles.header}/>
       <Grid
         className={styles.products}
         templateColumns="repeat(3, 1fr)"
@@ -39,7 +41,9 @@ const Products = () => {
         paginate={paginate}
       />
     
-    </Container>
+     {/* </Container> */}
+     </div>
+  
   ) : (
     "loading.."
   );

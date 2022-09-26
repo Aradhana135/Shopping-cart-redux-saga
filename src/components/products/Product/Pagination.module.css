@@ -29,18 +29,19 @@
 
   .Pagination{
     display: flex;
+    justify-content: center;
   }
   .Search{
     padding: 0.8rem;
     box-shadow: 0 10px 20px rgba(86, 26, 26, 0.26);
     border:rgb(125, 228, 125);
     border-radius: 10px;
-    /* border: 5px solid var(--secondary-color);
-    border-radius: 20px; */
     font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
-    /* justify-content: space-between; */
-    margin-right: 80px;
-    width: 100%;
+    width: 40%;
+  }
+  .Search_div{
+    width: 30%;
+    margin-left: 510px;
   }

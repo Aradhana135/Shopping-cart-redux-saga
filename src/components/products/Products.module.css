@@ -8,4 +8,11 @@
   .container_div{
     width: 100%;
   }
-  
+  .header{
+    width:38%
+  }
+  .main_div{
+    /* display: flex; */
+    justify-content: center;
+    margin-left: 15px;
+  }

@@ -3,9 +3,23 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { useSelector } from "react-redux";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Button, Input } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from '@chakra-ui/react'
+import Cart from "../Cart/Cart";
 const Navbar = () => {
   const cartData = useSelector((state) => state.shop.products);
+  const { isOpen, onOpen, onClose } = useDisclosure()
+    const btnRef = useRef()
 
   const [counter, setCounter] = useState(0);
   useEffect(() => {
@@ -27,7 +41,7 @@ const Navbar = () => {
             <u>E-Cart</u>{" "}
           </h2>
         </NavLink>
-        <NavLink to="/cart">
+          <button ref={btnRef} colorScheme='teal' onClick={onOpen}>
         <div className={styles.navbar__cart}>
           <img
             src="https://tse4.mm.bing.net/th?id=OIP.GGkHOaPknQlAlAup3ykoFQHaHa&pid=Api&P=0"
@@ -37,7 +51,22 @@ const Navbar = () => {
           <i></i>
           <div className={styles.cart__counter}>{counter}</div>
         </div>
-        </NavLink>
+        </button>
+        <Drawer className={styles.Drawer_main}
+          isOpen={isOpen}
+          placement='right'
+          onClose={onClose}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent  overflow='scroll'>
+            <DrawerCloseButton />
+            <Cart/>
+  
+            <DrawerFooter>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
       </div>
     </>
   );

@@ -24,7 +24,7 @@ const Product = ({ productData }) => {
     dispatch(loadCurrentItem(prodData));
   };
   return (
-    <ChakraProvider>
+    // <ChakraProvider>
     <div className={styles.product}>
       <div className={styles.product__image_div}>
         <img className={styles.product__image} src={productData.image} alt="" />
@@ -56,7 +56,7 @@ const Product = ({ productData }) => {
         </NavLink>
       </div>
     </div>
-    </ChakraProvider>
+    // </ChakraProvider>
   );
 };
 

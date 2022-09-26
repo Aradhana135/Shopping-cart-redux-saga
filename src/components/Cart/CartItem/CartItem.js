@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import styles from "./CartItem.module.css";
 import { removeFromCart, adjustQty } from "../../../redux/shopping/action";
 import { DeleteIcon } from '@chakra-ui/icons'
+import { Input } from "@chakra-ui/react";
 const CartItem = ({ item }) => {
   const [qtyvalue, setQtyValue] = useState(item.qty);
   const dispatch = useDispatch();
@@ -27,13 +28,12 @@ const CartItem = ({ item }) => {
       />
       <div className={styles.cartItem__details}>
         <p className={styles.details__title}>{item.title}</p>
-        {/* <p className={styles.details__desc}>{item.description}</p> */}
         <p className={styles.details__price}> ₹ {item.price}</p>
       </div>
       <div className={styles.cartItem__actions}>
         <div className={styles.cartItem__qty}>
           <label htmlFor="qty">Qty</label>
-          <input className={styles.cartItem__qty}
+          <Input className={styles.cartItem__qty}
             min="1"
             type="number"
             id="qty"
