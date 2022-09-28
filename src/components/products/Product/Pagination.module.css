@@ -23,18 +23,24 @@
   .Pagination{
     display: flex;
     justify-content: center;
+    /* margin-left: 150px; */
   }
   .Search{
-    padding: 0.8rem;
+    padding: 12px !important;
+    /* padding: 10px 0px 0px 20px !important; */
+    /* padding-left: 20px !important; */
     box-shadow: 0 10px 20px rgba(86, 26, 26, 0.26);
     border:rgb(125, 228, 125);
     border-radius: 10px;
     font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
-    width: 40%;
+    width: 45%;
+    margin-top: 100px;
   }
   .Search_div{
     width: 30%;
     margin-left: 510px;
+   
   }
+  

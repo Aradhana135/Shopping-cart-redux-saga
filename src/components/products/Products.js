@@ -15,12 +15,12 @@ const Products = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = product?.slice(indexOfFirstPost, indexOfLastPost);
-  console.log("currentPosts", currentPosts);
+ 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return currentPosts ? (
     <div className={styles.main_div}>
-    {/* <Container > */}
+    
     
       <Header className={styles.header}/>
       <Grid
@@ -33,15 +33,14 @@ const Products = () => {
         currentPosts.map((prod) => (
           <Product productData={prod} key={prod.id} />
         ))}
-        {console.log("products", product)}
       </Grid>
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={product.length}
         paginate={paginate}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
       />
-    
-     {/* </Container> */}
      </div>
   
   ) : (

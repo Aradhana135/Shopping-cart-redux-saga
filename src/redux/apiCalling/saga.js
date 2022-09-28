@@ -10,7 +10,6 @@ export function* workSaga() {
   try {
     const response = yield call(fetchShoppingProducts);
     const apiData = response.data;
-    console.log("apiData", apiData);
     yield put({ type: "API_CALL_SUCCESS", payload: { apiData: apiData } });
   } catch (error) {
     yield put({

@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./SingleItem.module.css";
 import { useNavigate } from "react-router-dom";
-import { useToast, ChakraProvider } from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/react";
 import { addToCart } from "../../redux/shopping/action";
 const SingleItem = () => {
   const navigate = useNavigate();
@@ -12,7 +12,6 @@ const SingleItem = () => {
   const toast = useToast();
   const handleAddToCart = (id) => {
     dispatch(addToCart({ id: id, allProducts: allProducts }));
-    console.log(id);
     toast({
       title: "Data added to cart",
       description: "",
@@ -22,9 +21,8 @@ const SingleItem = () => {
       isClosable: true,
     });
   };
-  console.log(currentItem);
   return (
-    <ChakraProvider>
+    
       <div className={styles.singleItem}>
         <img
           className={styles.singleItem__image}
@@ -37,7 +35,7 @@ const SingleItem = () => {
             {currentItem.description}
           </p>
           <p className={styles.details__price}> ₹ {currentItem.price}</p>
-
+<div className={styles.buttons__btn__div}>
           <button
             className={`${styles.buttons__btn} ${styles.details__addBtn}`}
             onClick={() => navigate("/")}
@@ -50,9 +48,9 @@ const SingleItem = () => {
           >
             Add To Cart
           </button>
+          </div>
         </div>
       </div>
-     </ChakraProvider>
   );
 };
 

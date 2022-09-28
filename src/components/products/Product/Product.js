@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Product.module.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +25,6 @@ const Product = ({ productData }) => {
     dispatch(loadCurrentItem(prodData));
   };
   return (
-    // <ChakraProvider>
     <div className={styles.product}>
       <div className={styles.product__image_div}>
         <img className={styles.product__image} src={productData.image} alt="" />
@@ -57,7 +56,6 @@ const Product = ({ productData }) => {
         </NavLink>
       </div>
     </div>
-    // </ChakraProvider>
   );
 };
 

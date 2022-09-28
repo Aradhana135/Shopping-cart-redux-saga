@@ -18,21 +18,15 @@ import {
   PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
-  Portal,
-  CloseButton,
-  Button
+  Button,
 } from "@chakra-ui/react";
 const CartItem = ({ item }) => {
-  const [qtyvalue, setQtyValue] = useState(item.qty);
+  const [, setQtyValue] = useState(item.qty);
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     dispatch(removeFromCart(id));
-    
-    console.log("id", id);
   };
   const handleQty = (e) => {
-    console.log(e);
     setQtyValue(e.target.value);
     dispatch(adjustQty(item.id, e.target.value));
   };
@@ -61,7 +55,7 @@ const CartItem = ({ item }) => {
       <div className={styles.cartItem__actions}>
         <div className={styles.cartItem__qty}>
           <label htmlFor="qty">Qty</label>
-          <NumberInput defaultValue={item.qty}>
+          <NumberInput min={1} max={15} defaultValue={item.qty}>
             <NumberInputField
               className={styles.cartItem__qty}
               id="qty"
@@ -76,30 +70,30 @@ const CartItem = ({ item }) => {
           </NumberInput>
         </div>
         <Popover>
-  <PopoverTrigger>
-  <button
-          className={styles.actions__deleteItemBtn}
-         
-        >
-          {/* <i class="fas fa-trash-alt fa-3x"> */}{" "}
-          <DeleteIcon className={styles.delete_btn} /> {/* </i> */}
-        </button>
-  </PopoverTrigger>
-  <PopoverContent>
-          <PopoverArrow />
-          <PopoverCloseButton />
-          <PopoverHeader>Remove Item </PopoverHeader>
-          <PopoverBody>
-            Are you sure you want to remove this item from cart ?
-            <PopoverFooter className={styles.delete_popup}>
-            {/* <PopoverCloseButton > Cancel  </PopoverCloseButton > */}
-           
-            <Button  onClick={() => handleDelete(item.id)}> Remove  </Button>
-            </PopoverFooter>
-          </PopoverBody>
-        </PopoverContent>
-      </Popover>
-        
+          <PopoverTrigger className={styles.popover}>
+            <button className={styles.actions__deleteItemBtn}>
+              {/* <i class="fas fa-trash-alt fa-3x"> */}{" "}
+              <DeleteIcon className={styles.delete_btn} /> {/* </i> */}
+            </button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton />
+            <PopoverHeader>Remove Item </PopoverHeader>
+            <PopoverBody>
+              Are you sure you want to remove this item from cart ?
+              <PopoverFooter className={styles.delete_popup}>
+                <Button
+                  onClick={() => handleDelete(item.id)}
+                  className={`${styles.buttons__btn} ${styles.buttons__view}`}
+                >
+                  {" "}
+                  Remove{" "}
+                </Button>
+              </PopoverFooter>
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
       </div>
     </div>
   );

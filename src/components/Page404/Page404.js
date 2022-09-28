@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 export function Page404() {
   const navigate = useNavigate();
   return (
-    <>
+  <>
+
      <div className={styles.main_div}>
       
         <img className={styles.error__image} src="https://thumbs.dreamstime.com/z/page-not-found-28300339.jpg" alt="404image" />
@@ -21,9 +22,10 @@ export function Page404() {
         <Button className={`${styles.buttons__btn} ${styles.buttons__view}`} onClick={() => navigate(-1)}>
           Go Back
         </Button>
-      </div>
-    {/* // </Page404StyleWrapper> */}
-    </>
+        </div>
+  
+   </>
+    
   );
 }
 

@@ -5,7 +5,8 @@ import Cart from "./components/Cart/Cart";
 import { useDispatch } from "react-redux";
 import { API_CALL_REQUEST } from "./redux/apiCalling/action";
 import Products from "./components/products/Products";
-import {Page404} from "../src/components/Page404/Page404";
+import { Page404 } from "../src/components/Page404/Page404";
+import { Flex } from "@chakra-ui/react";
 import {
   Routes,
   Route,
@@ -14,20 +15,28 @@ import {
 import SingleItem from "./components/SingleItem/SingleItem";
 function App() {
   const dispatch = useDispatch();
-  
-    dispatch({
-      type: API_CALL_REQUEST,
-    })
-  
+
+  dispatch({
+    type: API_CALL_REQUEST,
+  });
 
   return (
     <div>
-      <Navbar />
+      <Flex
+        as="header"
+        position="flexible"
+        backgroundColor="black"
+        w="100%"
+        height="70px"
+      >
+        <Navbar />
+      </Flex>
+
       <Routes>
         <Route path="/" element={<Products />} />
-        <Route exact path="/cart" element={<Cart/>} />
-          <Route exact path="/product/:id" element={<SingleItem/>} />
-          <Route element={<Page404 />} path="*" />
+        <Route exact path="/cart" element={<Cart />} />
+        <Route exact path="/product/:id" element={<SingleItem />} />
+        <Route element={<Page404 />} path="*" />
       </Routes>
     </div>
   );

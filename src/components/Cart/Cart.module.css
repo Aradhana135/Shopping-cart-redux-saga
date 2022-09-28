@@ -7,6 +7,7 @@
     border:rgb(125, 228, 125);
     border-radius: 10px;
     display: flex;
+    margin-top: 45px;
 }
 
 .cart__items {
@@ -18,7 +19,7 @@
 
 .cart__summary {
   height: auto;
-  flex: 0.3;
+  /* flex: 0.3; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,7 +27,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
   margin-top: 18px;
-  width: 500px !important;
+  width: 550px !important;
   margin-right: 10px;
   margin-top: 10px;
   height: 250px;
@@ -35,7 +36,7 @@
 }
 
 .summary__title {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -53,7 +54,7 @@
 
 .summary__price span:nth-child(2) {
   flex: 0.4;
-  font-size: 2rem;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -66,6 +67,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .summary__checkoutBtn:focus {
@@ -75,4 +77,19 @@
 
 .summary__checkoutBtn:hover {
   opacity: 0.75;
+}
+.summary__total__price{
+  font-size: 22px;
+  font-weight: bold;
+}
+.cart__empty{
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(228, 96, 96, 0.26);
+  border-radius: 10px;
+  width: 200px;
+  margin:20px 0px 0px 210px;
+  height: 200px;
+  padding-left: 30px;
+  padding-top: 80px;
 }

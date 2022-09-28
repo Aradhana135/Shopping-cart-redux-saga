@@ -20,7 +20,7 @@ export function apiReducer(state = initialState, action) {
     case actionTypeApi.API_CALL_FAILURE:
       return { ...state, error: action.payload.error };
     case actionTypeApi.SEARCH_ITEM:
-      console.log("qq", action);
+     
       return {
         ...state,
         apiData: state.data.filter((prod) =>

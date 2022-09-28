@@ -20,18 +20,30 @@ const shopReducer = (state = INITIAL_STATE, action) => {
             )
           : [...state.products, { ...item, qty: 1 }],
       };
-  
+
     case actionTypes.REMOVE_FROM_CART:
       return {
         ...state,
-        products: state.products.filter((item) => item.id !== action.payload.id),
+        products: state.products.filter(
+          (item) => item.id !== action.payload.id
+        ),
       };
     case actionTypes.ADJUST_QTY:
       return {
         ...state,
         products: state.products.map((item) =>
           item.id === action.payload.id
-            ? {...item, qty: action.payload.qty++ }
+            ? {
+                ...item,
+                qty:
+                  action.payload.qty > 1 && action.payload.qty <= 15
+                    ? action.payload.qty
+                    : action.payload.qty <= 1
+                    ? 1
+                    : action.payload.qty > 15
+                    ? 15
+                    : action.payload.qty,
+               }
             : item
         ),
       };
@@ -41,7 +53,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         ...state,
         currentItem: action.payload,
       };
-  
+
     default:
       return state;
   }

@@ -10,6 +10,7 @@ function Header() {
       <div className={styles.Search_div}>
         <div >
           <Input className={styles.Search}
+            variant='unstyled'
             id="SearchInput"
             type="text"
             placeholder="Search here..."

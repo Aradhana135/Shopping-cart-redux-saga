@@ -1,5 +1,5 @@
 .navbar {
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +42,7 @@ margin-right: 5px !important
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
-  width: 80px;
+  width: 70px;
 }
 
 .cart__title {
@@ -55,6 +55,7 @@ margin-right: 5px !important
   width: 30px;
   height: 30px;
   object-fit: contain;
+  margin-top: 20px !important;
 }
 
 .cart__counter {
@@ -70,7 +71,7 @@ margin-right: 5px !important
   justify-content: center;
   align-items: center;
   margin-top: -40px;
-  margin-left: -30px;
+  margin-left: -55px !important;
 }
 .Drawer_main{
   height: auto;

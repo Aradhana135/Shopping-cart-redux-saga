@@ -4,13 +4,10 @@ import styles from "./Navbar.module.css";
 import { useSelector } from "react-redux";
 
 import { useState, useEffect, useRef } from "react";
-import { Button, Input } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import {
   Drawer,
-  DrawerBody,
   DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
@@ -28,7 +25,6 @@ const Navbar = () => {
     if (cartData) {
       cartData.forEach((elm) => {
         value += elm.qty;
-        console.log("value:", value);
       });
     }
     setCounter(value);
